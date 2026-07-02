@@ -1,0 +1,388 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "StartScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "Background",
+            "Width": 320,
+            "Height": 240,
+            "Filename": "Background1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "StartBtn",
+            "X": 40,
+            "Y": 161,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "TextId": "__SingleUse_CGTB",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Title",
+            "X": 79,
+            "Y": 40,
+            "Width": 162,
+            "Height": 20,
+            "TextId": "__SingleUse_WNY4",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "HighScore",
+            "X": 109,
+            "Y": 111,
+            "Width": 123,
+            "Height": 18,
+            "TextId": "__SingleUse_VSPE",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_JNYB"
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "StartBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "GameScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "GameScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "GameBackgroundNight",
+            "Width": 320,
+            "Height": 240,
+            "Filename": "Background_night.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "GameBackgroundDay",
+            "Width": 320,
+            "Height": 240,
+            "Filename": "Background_day.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Container",
+            "Name": "Pipe1",
+            "X": 330,
+            "Y": -35,
+            "Width": 70,
+            "Height": 340,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "BottomPipe",
+                "Y": 187,
+                "Width": 70,
+                "Height": 150,
+                "RelativeFilename": "Pipe.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "TopPipe",
+                "Width": 70,
+                "Height": 110,
+                "RelativeFilename": "Pipe_bottom.png"
+              },
+              {
+                "Type": "Box",
+                "Name": "ScoreZone",
+                "X": 34,
+                "Y": 110,
+                "Width": 1,
+                "Height": 80,
+                "Visible": false,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Pipe2",
+            "X": 330,
+            "Y": -35,
+            "Width": 70,
+            "Height": 340,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "BottomPipe_1",
+                "Y": 187,
+                "Width": 70,
+                "Height": 150,
+                "RelativeFilename": "Pipe.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "TopPipe_1",
+                "Width": 70,
+                "Height": 110,
+                "RelativeFilename": "Pipe_bottom.png"
+              },
+              {
+                "Type": "Box",
+                "Name": "ScoreZone_1",
+                "X": 34,
+                "Y": 110,
+                "Width": 1,
+                "Height": 80,
+                "Visible": false,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Pipe3",
+            "X": 330,
+            "Y": -35,
+            "Width": 70,
+            "Height": 340,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "BottomPipe_2",
+                "Y": 190,
+                "Width": 70,
+                "Height": 150,
+                "RelativeFilename": "Pipe.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "TopPipe_2",
+                "Width": 70,
+                "Height": 110,
+                "RelativeFilename": "Pipe_bottom.png"
+              },
+              {
+                "Type": "Box",
+                "Name": "ScoreZone_2",
+                "X": 34,
+                "Y": 110,
+                "Width": 1,
+                "Height": 80,
+                "Visible": false,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "GameOverContainer",
+            "X": 35,
+            "Width": 250,
+            "Height": 240,
+            "Components": [
+              {
+                "Type": "TextArea",
+                "Name": "HighScore",
+                "X": 28,
+                "Y": 107,
+                "Width": 124,
+                "Height": 16,
+                "TextId": "__SingleUse_929Z",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_0UIW",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "EndScore",
+                "X": 74,
+                "Y": 84,
+                "Width": 63,
+                "Height": 18,
+                "TextId": "__SingleUse_AIME",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_QER4",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "WideTextAction": 1
+              },
+              {
+                "Type": "TextArea",
+                "Name": "GameOver",
+                "X": 8,
+                "Y": 26,
+                "Width": 234,
+                "Height": 49,
+                "TextId": "__SingleUse_PGYU",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "MainMenu",
+                "X": 8,
+                "Y": 152,
+                "Width": 240,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+                "TextId": "__SingleUse_O958",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+              }
+            ]
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "Birdo",
+            "X": 16,
+            "Y": 108,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "Bird .png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Score",
+            "Width": 67,
+            "Height": 20,
+            "TextId": "__SingleUse_ZDJT",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_10E0",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "WideTextAction": 1
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "MainMenu"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "StartScreen"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "FlappyBird",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "StartScreen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.25.0"
+}

@@ -1,0 +1,17 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:53:6:virtual void GameScreenView::tearDownScreen()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:11:13:GameScreenView::~GameScreenView()	1
+../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:11:13:virtual GameScreenView::~GameScreenView()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:11:1:GameScreenView::GameScreenView()	1
+E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:236:6:bool GameScreenView::checkCollision(int, int, int, int, int, int, int, int)	4
+E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:266:6:void GameScreenView::randomizePipeHeight(touchgfx::Container&)	1
+E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:280:6:void GameScreenView::toggleBackground()	1
+E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:16:6:virtual void GameScreenView::setupScreen()	1
+E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:244:6:void GameScreenView::setGameOver()	2
+E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:164:6:void GameScreenView::handleCollision(touchgfx::Container&)	10
+E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:58:6:virtual void GameScreenView::handleTickEvent()	16

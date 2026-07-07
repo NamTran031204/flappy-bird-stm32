@@ -11,9 +11,20 @@ RM := rm -rf
 -include sources.mk
 -include USB_HOST/Target/subdir.mk
 -include USB_HOST/App/subdir.mk
+-include TouchGFX/target/generated/subdir.mk
+-include TouchGFX/target/subdir.mk
+-include TouchGFX/gui/src/screen1_screen/subdir.mk
+-include TouchGFX/gui/src/model/subdir.mk
+-include TouchGFX/gui/src/common/subdir.mk
+-include TouchGFX/generated/texts/src/subdir.mk
+-include TouchGFX/generated/images/src/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screen1_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/common/subdir.mk
+-include TouchGFX/generated/fonts/src/subdir.mk
+-include TouchGFX/App/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
--include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Middlewares/ST/STM32_USB_Host_Library/Core/Src/subdir.mk
 -include Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/subdir.mk
@@ -93,7 +104,7 @@ main-build: flappy-bird-stm32.elf secondary-outputs
 
 # Tool invocations
 flappy-bird-stm32.elf flappy-bird-stm32.map: $(OBJS) $(USER_OBJS) E:\DaiCuongBK\HeNhung\btl\flappy-bird-stm32\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "flappy-bird-stm32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\DaiCuongBK\HeNhung\btl\flappy-bird-stm32\STM32F429ZITX_FLASH.ld" -Wl,-Map="flappy-bird-stm32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+	arm-none-eabi-g++ -o "flappy-bird-stm32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\DaiCuongBK\HeNhung\btl\flappy-bird-stm32\STM32F429ZITX_FLASH.ld" -Wl,-Map="flappy-bird-stm32.map" -Wl,--gc-sections -static -L"E:\DaiCuongBK\HeNhung\btl\flappy-bird-stm32\Middlewares\ST\touchgfx\lib\core\cortex_m4f\gcc" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

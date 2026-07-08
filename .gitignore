@@ -1,3 +1,29 @@
 CLAUDE.md
 
 .claude/
+
+docs/
+
+# Build output STM32CubeIDE (regenerate bằng Build, không cần commit)
+/Debug/
+/Release/
+
+# Backup tự động khi CubeMX / TouchGFX Designer regenerate (không cần cho build)
+**/Backup/
+Middlewares/ST/touchgfx_backup/
+*.touchgfx.bak
+*_backup.touchgfx
+
+# Simulator build output (Visual Studio / MSVC)
+TouchGFX/simulator/msvs/.vs/
+TouchGFX/simulator/msvs/x64/
+TouchGFX/simulator/msvs/Debug/
+TouchGFX/simulator/msvs/Release/
+*.obj
+*.pdb
+*.ilk
+*.sdf
+*.opensdf
+
+# JetBrains IDE metadata (không dùng cho project STM32CubeIDE này)
+.idea/

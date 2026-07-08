@@ -67,7 +67,8 @@ const osThreadAttr_t defaultTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
-
+/* Hang doi su kien nhay: ngat nut PA0 (EXTI0) -> GameScreenView (kenh coupling duy nhat) */
+osMessageQueueId_t birdQueueHandle;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -152,7 +153,8 @@ int main(void)
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
+  /* Tao truoc khi task chay: 5 phan tu uint8_t, du cho cac lan nhay lien tiep */
+  birdQueueHandle = osMessageQueueNew(5, sizeof(uint8_t), NULL);
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -606,8 +608,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : B1_Pin MEMS_INT1_Pin MEMS_INT2_Pin TP_INT1_Pin */
-  GPIO_InitStruct.Pin = B1_Pin|MEMS_INT1_Pin|MEMS_INT2_Pin|TP_INT1_Pin;
+  /*Configure GPIO pin : B1_Pin */
+  GPIO_InitStruct.Pin = B1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : MEMS_INT1_Pin MEMS_INT2_Pin TP_INT1_Pin */
+  GPIO_InitStruct.Pin = MEMS_INT1_Pin|MEMS_INT2_Pin|TP_INT1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_EVT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -651,13 +659,41 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
   /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
-
+/**
+  * @brief  Callback ngat ngoai EXTI (canh len) - nut User B1 = PA0.
+  *         Thay the hoan toan viec doc nut bang polling: chi day su kien "nhay"
+  *         vao hang doi (ISR-safe, timeout 0, khong block). GameScreenView doc
+  *         hang doi nay trong handleTickEvent -> birdVelocity = jumpForce.
+  *         Chong doi phim bang moc thoi gian mem (HAL_GetTick), KHONG dung delay.
+  * @param  GPIO_Pin: chan sinh ngat
+  */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == B1_Pin)
+  {
+    static uint32_t lastPressTick = 0U;
+    uint32_t now = HAL_GetTick();
+    if ((now - lastPressTick) >= 50U)   /* debounce mem ~50ms */
+    {
+      lastPressTick = now;
+      if (birdQueueHandle != NULL)
+      {
+        uint8_t jumpEvent = 1U;
+        osMessageQueuePut(birdQueueHandle, &jumpEvent, 0U, 0U);
+      }
+    }
+  }
+}
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */

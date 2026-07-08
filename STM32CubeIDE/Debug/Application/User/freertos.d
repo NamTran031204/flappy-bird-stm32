@@ -1,5 +1,5 @@
 Application/User/freertos.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/Core/Src/freertos.c \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/Core/Src/freertos.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

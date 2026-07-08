@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/generated/STM32DMA.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/target/generated/STM32DMA.cpp \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/target/generated/STM32DMA.cpp \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -53,6 +53,7 @@ Application/User/TouchGFX/target/generated/STM32DMA.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/events/DragEvent.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/events/GestureEvent.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FrameBufferAllocator.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FrameBufferListener.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/UIEventListener.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD.hpp \
@@ -120,6 +121,7 @@ Application/User/TouchGFX/target/generated/STM32DMA.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/events/DragEvent.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/events/GestureEvent.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FrameBufferAllocator.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FrameBufferListener.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/UIEventListener.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD.hpp:

@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/port.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

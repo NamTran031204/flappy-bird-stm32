@@ -1,5 +1,5 @@
 Application/User/generated/FontCache.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/generated/fonts/src/FontCache.cpp \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/generated/fonts/src/FontCache.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TextProvider.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \

@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/croutine.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/Middlewares/Third_Party/FreeRTOS/Source/croutine.c \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/Middlewares/Third_Party/FreeRTOS/Source/croutine.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

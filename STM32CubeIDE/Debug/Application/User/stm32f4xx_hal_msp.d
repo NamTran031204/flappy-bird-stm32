@@ -1,5 +1,5 @@
 Application/User/stm32f4xx_hal_msp.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/Core/Src/stm32f4xx_hal_msp.c \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/Core/Src/stm32f4xx_hal_msp.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \

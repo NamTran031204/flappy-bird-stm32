@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/STM32TouchController.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/target/STM32TouchController.cpp \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/target/STM32TouchController.cpp \
  ../../TouchGFX/target/STM32TouchController.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \

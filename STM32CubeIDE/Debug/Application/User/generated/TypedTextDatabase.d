@@ -1,5 +1,5 @@
 Application/User/generated/TypedTextDatabase.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \

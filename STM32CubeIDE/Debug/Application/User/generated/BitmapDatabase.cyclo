@@ -1,2 +1,2 @@
-E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/generated/images/src/BitmapDatabase.cpp:29:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	1
-E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/generated/images/src/BitmapDatabase.cpp:34:10:uint16_t BitmapDatabase::getInstanceSize()	1
+E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/generated/images/src/BitmapDatabase.cpp:17:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	1
+E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/generated/images/src/BitmapDatabase.cpp:22:10:uint16_t BitmapDatabase::getInstanceSize()	1

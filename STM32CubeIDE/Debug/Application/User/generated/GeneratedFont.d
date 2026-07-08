@@ -1,5 +1,5 @@
 Application/User/generated/GeneratedFont.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/generated/fonts/src/GeneratedFont.cpp \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/generated/fonts/src/GeneratedFont.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

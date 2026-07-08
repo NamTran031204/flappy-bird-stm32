@@ -1,5 +1,5 @@
 Application/User/generated/SVGDatabase.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/generated/images/src/SVGDatabase.cpp \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/generated/images/src/SVGDatabase.cpp \
  ../../TouchGFX/generated/images/include/images/SVGDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp \

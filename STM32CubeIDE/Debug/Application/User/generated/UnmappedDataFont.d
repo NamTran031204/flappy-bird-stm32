@@ -1,5 +1,5 @@
 Application/User/generated/UnmappedDataFont.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FlashDataReader.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp \

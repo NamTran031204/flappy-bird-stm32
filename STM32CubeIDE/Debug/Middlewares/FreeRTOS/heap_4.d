@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/heap_4.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

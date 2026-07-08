@@ -1,5 +1,5 @@
 Application/User/generated/CachedFont.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/TouchGFX/generated/fonts/src/CachedFont.cpp \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/TouchGFX/generated/fonts/src/CachedFont.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/CachedFont.hpp \
  ../../TouchGFX/generated/fonts/include/fonts/FontCache.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

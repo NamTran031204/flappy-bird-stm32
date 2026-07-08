@@ -7,8 +7,6 @@ class Model
 {
 public:
     Model();
-    void setHighScore(int score) { highScore = score; }
-    int getHighScore() { return highScore; }
 
     void bind(ModelListener* listener)
     {
@@ -18,7 +16,6 @@ public:
     void tick();
 protected:
     ModelListener* modelListener;
-    int highScore;
 };
 
 #endif // MODEL_HPP

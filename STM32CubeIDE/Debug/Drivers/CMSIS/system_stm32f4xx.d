@@ -1,5 +1,5 @@
 Drivers/CMSIS/system_stm32f4xx.o: \
- E:/DaiCuongBK/HeNhung/btl/FlappyBird/Core/Src/system_stm32f4xx.c \
+ E:/DaiCuongBK/HeNhung/btl/flappy-bird-stm32/Core/Src/system_stm32f4xx.c \
  ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h \
  ../../Drivers/CMSIS/Include/core_cm4.h \

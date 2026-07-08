@@ -6,6 +6,6 @@
 
 static unsigned short SIM_WIDTH = 240;
 static unsigned short SIM_HEIGHT = 320;
-#define SIM_TITLE "FlappyBird"
+#define SIM_TITLE "flappy-bird-stm32"
 
 #endif // SIMCONSTANTS_HPP

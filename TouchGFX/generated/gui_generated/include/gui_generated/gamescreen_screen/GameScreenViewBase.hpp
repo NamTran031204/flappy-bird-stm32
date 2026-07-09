@@ -65,6 +65,16 @@ protected:
 
 private:
 
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<GameScreenViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+
 };
 
 #endif // GAMESCREENVIEWBASE_HPP

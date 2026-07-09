@@ -6,7 +6,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-StartScreenViewBase::StartScreenViewBase()
+StartScreenViewBase::StartScreenViewBase() :
+    buttonCallback(this, &StartScreenViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 320, 240);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -35,6 +36,7 @@ StartScreenViewBase::StartScreenViewBase()
     startBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_VBUU));
     startBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     startBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    startBtn.setAction(buttonCallback);
     add(startBtn);
 }
 
@@ -46,4 +48,15 @@ StartScreenViewBase::~StartScreenViewBase()
 void StartScreenViewBase::setupScreen()
 {
 
+}
+
+void StartScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &startBtn)
+    {
+        //changeToGameScreen
+        //When startBtn clicked change screen to GameScreen
+        //Go to GameScreen with no screen transition
+        application().gotoGameScreenScreenNoTransition();
+    }
 }

@@ -6,7 +6,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-GameScreenViewBase::GameScreenViewBase()
+GameScreenViewBase::GameScreenViewBase() :
+    buttonCallback(this, &GameScreenViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 320, 240);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -99,6 +100,7 @@ GameScreenViewBase::GameScreenViewBase()
     MainMenu.setLabelText(touchgfx::TypedText(T___SINGLEUSE_O958));
     MainMenu.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     MainMenu.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    MainMenu.setAction(buttonCallback);
     GameOverContainer.add(MainMenu);
 
     add(GameOverContainer);
@@ -126,4 +128,15 @@ GameScreenViewBase::~GameScreenViewBase()
 void GameScreenViewBase::setupScreen()
 {
 
+}
+
+void GameScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &MainMenu)
+    {
+        //changeToStartScreen
+        //When MainMenu clicked change screen to StartScreen
+        //Go to StartScreen with no screen transition
+        application().gotoStartScreenScreenNoTransition();
+    }
 }

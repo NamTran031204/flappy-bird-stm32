@@ -60,7 +60,20 @@
             "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "changeToGameScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "GameScreen"
+            }
+          }
+        ]
       },
       {
         "Name": "GameScreen",
@@ -296,7 +309,20 @@
             "WideTextAction": 1
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "changeToStartScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "MainMenu"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "StartScreen"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],

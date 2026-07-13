@@ -27,6 +27,9 @@ public:
 
     virtual ~GameScreenPresenter() {}
 
+    void saveHighScore(int score);
+    int getHighScore();
+
 private:
     GameScreenPresenter();
 

@@ -16,3 +16,13 @@ void GameScreenPresenter::deactivate()
 {
 
 }
+
+void GameScreenPresenter::saveHighScore(int score)
+{
+    model->setHighScore(score);
+}
+
+int GameScreenPresenter::getHighScore()
+{
+    return model->getHighScore();
+}

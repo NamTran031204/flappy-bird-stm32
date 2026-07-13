@@ -16,3 +16,8 @@ void StartScreenPresenter::deactivate()
 {
 
 }
+
+int StartScreenPresenter::getHighScore()
+{
+    return model->getHighScore();
+}

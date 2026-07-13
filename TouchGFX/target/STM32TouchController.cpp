@@ -49,33 +49,16 @@ extern "C" uint8_t isRevD; /* Applicable only for STM32F429I DISCOVERY REVD and 
 
 void STM32TouchController::init()
 {
-    /**
-     * Initialize touch controller and driver
-     *
-     */
-    BSP_TS_Init(240, 320);
+    /* Board STM32F429I DISC1 la LCD only, khong co touch panel. Xem rule R8.
+       Khong init stmpe811 de tranh doc I2C moi tick gay lag va treo tich luy. */
 }
 
 bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 {
-    /**
-     * By default sampleTouch returns false,
-     * return true if a touch has been detected, otherwise false.
-     *
-     * Coordinates are passed to the caller by reference by x and y.
-     *
-     * This function is called by the TouchGFX framework.
-     * By default sampleTouch is called every tick, this can be adjusted by HAL::setTouchSampleRate(int8_t);
-     *
-     */
-    TS_StateTypeDef state;
-    BSP_TS_GetState(&state);
-    if (state.TouchDetected)
-    {
-        x = state.X;
-        y = state.Y;
-        return true;
-    }
+    /* Board LCD only nen khong doc I2C moi frame. Dieu khien bang nut vat ly PA0.
+       Simulator dung touch controller rieng nen chuot van hoat dong. */
+    (void)x;
+    (void)y;
     return false;
 }
 

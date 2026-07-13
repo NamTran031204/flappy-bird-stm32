@@ -90,6 +90,9 @@ const osThreadAttr_t GUI_Task_attributes = {
 };
 /* USER CODE BEGIN PV */
 uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above */
+
+/* Co nut PA0. ISR EXTI0 dat len 1, GUI doc va xoa moi tick. Van la ngat khong polling. */
+volatile uint8_t birdPressedFlag = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -620,6 +623,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pins : PD12 PD13 */
   GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -627,11 +636,36 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
   /* USER CODE BEGIN MX_GPIO_Init_2 */
   /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
+
+/*
+ * Callback ngat EXTI cho nut vat ly PA0 canh len.
+ * ISR chi dat co birdPressedFlag, GUI se doc va xu ly moi tick.
+ * Toan bo di bang ngat EXTI0, khong polling GPIO. Xem rule R-HARD-01.a.
+ */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == GPIO_PIN_0)
+  {
+    /* Chong rung mem khoang 200 ms bang moc thoi gian HAL_GetTick. */
+    static uint32_t lastTick = 0;
+    uint32_t now = HAL_GetTick();
+    if (now - lastTick >= 200U)
+    {
+      lastTick = now;
+      birdPressedFlag = 1U;
+    }
+  }
+}
+
 /**
   * @brief  Perform the SDRAM external memory initialization sequence
   * @param  hsdram: SDRAM handle

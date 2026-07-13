@@ -27,6 +27,8 @@ public:
 
     virtual ~StartScreenPresenter() {}
 
+    int getHighScore();
+
 private:
     StartScreenPresenter();
 

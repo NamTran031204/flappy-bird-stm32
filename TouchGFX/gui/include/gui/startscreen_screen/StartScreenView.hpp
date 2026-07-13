@@ -11,7 +11,9 @@ public:
     virtual ~StartScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void handleTickEvent();
 protected:
+    touchgfx::Unicode::UnicodeChar highScoreBuffer[6];
 };
 
 #endif // STARTSCREENVIEW_HPP

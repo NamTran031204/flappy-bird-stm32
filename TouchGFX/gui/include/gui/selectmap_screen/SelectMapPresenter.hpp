@@ -27,6 +27,9 @@ public:
 
     virtual ~SelectMapPresenter() {}
 
+    int getSelectedTheme();
+    void setSelectedTheme(int theme);
+
 private:
     SelectMapPresenter();
 

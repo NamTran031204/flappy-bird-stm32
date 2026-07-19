@@ -23,6 +23,8 @@ CLAUDE.md
 /EWARM/**/Exe/
 /EWARM/**/BrowseInfo/
 
+/.codegraph
+
 *.ioc.bak
 *.bak
 *~

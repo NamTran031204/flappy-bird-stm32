@@ -44,6 +44,7 @@ StartScreenViewBase::StartScreenViewBase() :
     selectBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_I7EJ));
     selectBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     selectBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    selectBtn.setAction(buttonCallback);
     add(selectBtn);
 }
 
@@ -65,5 +66,12 @@ void StartScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //When startBtn clicked change screen to GameScreen
         //Go to GameScreen with no screen transition
         application().gotoGameScreenScreenNoTransition();
+    }
+    if (&src == &selectBtn)
+    {
+        //gotoSelectMapScreen
+        //When selectBtn clicked change screen to SelectMap
+        //Go to SelectMap with no screen transition
+        application().gotoSelectMapScreenNoTransition();
     }
 }

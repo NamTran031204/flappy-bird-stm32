@@ -95,6 +95,18 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "GameScreen"
             }
+          },
+          {
+            "InteractionName": "gotoSelectMapScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "selectBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "SelectMap"
+            }
           }
         ]
       },

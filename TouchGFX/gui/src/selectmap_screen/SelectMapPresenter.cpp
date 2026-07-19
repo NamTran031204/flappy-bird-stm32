@@ -16,3 +16,13 @@ void SelectMapPresenter::deactivate()
 {
 
 }
+
+int SelectMapPresenter::getSelectedTheme()
+{
+    return model->getSelectedTheme();
+}
+
+void SelectMapPresenter::setSelectedTheme(int theme)
+{
+    model->setSelectedTheme(theme);
+}

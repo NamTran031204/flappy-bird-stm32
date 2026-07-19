@@ -26,6 +26,9 @@ public:
     // GameScreen
     void gotoGameScreenScreenNoTransition();
 
+    // SelectMap
+    void gotoSelectMapScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -36,6 +39,9 @@ protected:
 
     // GameScreen
     void gotoGameScreenScreenNoTransitionImpl();
+
+    // SelectMap
+    void gotoSelectMapScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

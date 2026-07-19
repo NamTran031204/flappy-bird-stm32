@@ -62,3 +62,16 @@ void FrontendApplicationBase::gotoGameScreenScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<GameScreenView, GameScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
+
+// SelectMap
+
+void FrontendApplicationBase::gotoSelectMapScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSelectMapScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoSelectMapScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<SelectMapView, SelectMapPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}

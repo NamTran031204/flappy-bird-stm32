@@ -143,7 +143,7 @@
                 "Y": 187,
                 "Width": 70,
                 "Height": 150,
-                "RelativeFilename": "Pipe_cyberpunk.png"
+                "RelativeFilename": "Pipe.png"
               },
               {
                 "Type": "Image",
@@ -182,7 +182,7 @@
                 "Y": 187,
                 "Width": 70,
                 "Height": 150,
-                "RelativeFilename": "Pipe_cyberpunk.png"
+                "RelativeFilename": "Pipe.png"
               },
               {
                 "Type": "Image",
@@ -221,7 +221,7 @@
                 "Y": 190,
                 "Width": 70,
                 "Height": 150,
-                "RelativeFilename": "Pipe_cyberpunk.png"
+                "RelativeFilename": "Pipe.png"
               },
               {
                 "Type": "Image",

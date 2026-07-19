@@ -43,6 +43,7 @@ protected:
 
     // Ham logic
     void resetGame();
+    void applyTheme(int theme);   // doi skin (nen/ong/chim) theo Model.selectedTheme
     void requestJump();
     void randomizePipeHeight(touchgfx::Container& pipe);
     void handleCollision(touchgfx::Container& pipe, int idx);

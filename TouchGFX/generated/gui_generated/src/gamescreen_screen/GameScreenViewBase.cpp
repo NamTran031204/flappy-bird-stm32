@@ -25,7 +25,7 @@ GameScreenViewBase::GameScreenViewBase() :
 
     Pipe1.setPosition(330, -35, 70, 340);
     BottomPipe.setXY(0, 187);
-    BottomPipe.setBitmap(touchgfx::Bitmap(BITMAP_PIPE_CYBERPUNK_ID));
+    BottomPipe.setBitmap(touchgfx::Bitmap(BITMAP_PIPE_ID));
     Pipe1.add(BottomPipe);
 
     TopPipe.setXY(0, 0);
@@ -41,7 +41,7 @@ GameScreenViewBase::GameScreenViewBase() :
 
     Pipe2.setPosition(330, -35, 70, 340);
     BottomPipe_1.setXY(0, 187);
-    BottomPipe_1.setBitmap(touchgfx::Bitmap(BITMAP_PIPE_CYBERPUNK_ID));
+    BottomPipe_1.setBitmap(touchgfx::Bitmap(BITMAP_PIPE_ID));
     Pipe2.add(BottomPipe_1);
 
     TopPipe_1.setXY(0, 0);
@@ -57,7 +57,7 @@ GameScreenViewBase::GameScreenViewBase() :
 
     Pipe3.setPosition(330, -35, 70, 340);
     BottomPipe_2.setXY(0, 190);
-    BottomPipe_2.setBitmap(touchgfx::Bitmap(BITMAP_PIPE_CYBERPUNK_ID));
+    BottomPipe_2.setBitmap(touchgfx::Bitmap(BITMAP_PIPE_ID));
     Pipe3.add(BottomPipe_2);
 
     TopPipe_2.setXY(0, 0);

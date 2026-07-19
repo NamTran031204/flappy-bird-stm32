@@ -1,6 +1,7 @@
 #include <gui/gamescreen_screen/GameScreenView.hpp>
 #include <touchgfx/Color.hpp>
 #include <touchgfx/events/ClickEvent.hpp>
+#include <images/BitmapDatabase.hpp>
 
 /* Co nut PA0 va HAL_GetTick chi ton tai tren target.
    Simulator khong co FreeRTOS nen chan lai, flap trong simulator dung touch. */
@@ -48,6 +49,9 @@ void GameScreenView::resetGame()
 #endif
 
     birdY = (float)Birdo.getY();
+
+    /* Ap skin (nen/ong/chim) theo theme da chon truoc khi bat dau van. */
+    applyTheme(presenter->getSelectedTheme());
 
     GameBackgroundDay.setVisible(true);
     GameBackgroundNight.setVisible(false);
@@ -309,4 +313,48 @@ void GameScreenView::toggleBackground()
 {
     isNightMode = !isNightMode;
     isTransitioning = true;
+}
+
+/* Doi bitmap nen/ong/chim theo theme. 0 = Classic, 1 = Cyberpunk.
+   Day/Night widget mang bitmap cua theme hien tai nen toggleBackground lat ngay/dem tu dung. */
+void GameScreenView::applyTheme(int theme)
+{
+    touchgfx::BitmapId bgDay, bgNight, bird, pipeBottom, pipeTop;
+    if (theme == 1)   // Cyberpunk
+    {
+        bgDay      = BITMAP_BACKGROUND_DAY_CYBERPUNK_ID;
+        bgNight    = BITMAP_BACKGROUND_NIGHT_CYBERPUNK_ID;
+        bird       = BITMAP_BIRD_YELLOW_ID;
+        pipeBottom = BITMAP_PIPE_CYBERPUNK_ID;
+        pipeTop    = BITMAP_PIPE_BOTTOM_CYBERPUNK_ID;
+    }
+    else              // Classic (0)
+    {
+        bgDay      = BITMAP_BACKGROUND_DAY_ID;
+        bgNight    = BITMAP_BACKGROUND_NIGHT_ID;
+        bird       = BITMAP_BIRD__ID;
+        pipeBottom = BITMAP_PIPE_ID;      // Pipe_.png doi ten thanh Pipe.png -> BITMAP_PIPE_ID
+        pipeTop    = BITMAP_PIPE_BOTTOM_ID;
+    }
+
+    GameBackgroundDay.setBitmap(touchgfx::Bitmap(bgDay));
+    GameBackgroundNight.setBitmap(touchgfx::Bitmap(bgNight));
+    Birdo.setBitmap(touchgfx::Bitmap(bird));
+
+    BottomPipe.setBitmap(touchgfx::Bitmap(pipeBottom));
+    BottomPipe_1.setBitmap(touchgfx::Bitmap(pipeBottom));
+    BottomPipe_2.setBitmap(touchgfx::Bitmap(pipeBottom));
+    TopPipe.setBitmap(touchgfx::Bitmap(pipeTop));
+    TopPipe_1.setBitmap(touchgfx::Bitmap(pipeTop));
+    TopPipe_2.setBitmap(touchgfx::Bitmap(pipeTop));
+
+    GameBackgroundDay.invalidate();
+    GameBackgroundNight.invalidate();
+    Birdo.invalidate();
+    BottomPipe.invalidate();
+    BottomPipe_1.invalidate();
+    BottomPipe_2.invalidate();
+    TopPipe.invalidate();
+    TopPipe_1.invalidate();
+    TopPipe_2.invalidate();
 }

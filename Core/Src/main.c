@@ -655,10 +655,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   if (GPIO_Pin == GPIO_PIN_0)
   {
-    /* Chong rung mem khoang 200 ms bang moc thoi gian HAL_GetTick. */
+    /* Chong rung mem khoang 50 ms bang moc thoi gian HAL_GetTick. */
     static uint32_t lastTick = 0;
     uint32_t now = HAL_GetTick();
-    if (now - lastTick >= 200U)
+    if (now - lastTick >= 50U)
     {
       lastTick = now;
       birdPressedFlag = 1U;

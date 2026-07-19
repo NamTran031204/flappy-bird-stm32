@@ -1,10 +1,11 @@
 #include <gui/startscreen_screen/StartScreenView.hpp>
 
-/* Co nut PA0 dinh nghia trong Core Src main.c, chi ton tai tren target.
+/* Co nut PA0 va HAL_GetTick chi ton tai tren target.
    Simulator khong co FreeRTOS nen chan lai, dieu huong bang touch. */
 #ifndef SIMULATOR
 extern "C"
 {
+#include "stm32f4xx_hal.h"
 extern volatile uint8_t birdPressedFlag;
 }
 #endif
@@ -34,11 +35,21 @@ void StartScreenView::handleTickEvent()
     StartScreenViewBase::handleTickEvent();
 
 #ifndef SIMULATOR
-    /* Nut vat ly PA0 dat co. Hanh xu nhu bam startBtn, chuyen sang GameScreen. */
-    if (birdPressedFlag)
+    /* Doc co PA0 tu ISR EXTI0 (khong polling GPIO), phan biet single/double bang HAL_GetTick (ngat TIM6).
+       single-click = vao choi ngay; double-click = mo man chon map. */
+    bool pressed = birdPressedFlag;
+    birdPressedFlag = 0;
+
+    switch (clickDetector.update(pressed, HAL_GetTick()))
     {
-        birdPressedFlag = 0;
+    case MenuAction::NAVIGATE:
+        application().gotoSelectMapScreenNoTransition();
+        break;
+    case MenuAction::SELECT:
         application().gotoGameScreenScreenNoTransition();
+        break;
+    default:
+        break;
     }
 #endif
 }

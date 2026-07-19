@@ -320,6 +320,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/GameScreen_CyberPunkPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/gamescreen_cyberpunk_screen/GameScreen_CyberPunkPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/GameScreen_CyberPunkView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/gamescreen_cyberpunk_screen/GameScreen_CyberPunkView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/GameScreenPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/gamescreen_screen/GameScreenPresenter.cpp</locationURI>
@@ -333,6 +343,16 @@
 			<name>Application/User/gui/Model.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/SelectMapPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/selectmap_screen/SelectMapPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/SelectMapView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/selectmap_screen/SelectMapView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/StartScreenPresenter.cpp</name>
@@ -455,9 +475,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/GameScreen_CyberPunkViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/gamescreen_cyberpunk_screen/GameScreen_CyberPunkViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/GameScreenViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/gamescreen_screen/GameScreenViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/SelectMapViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/selectmap_screen/SelectMapViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/StartScreenViewBase.cpp</name>
@@ -473,6 +503,11 @@
 			<name>Application/User/generated/SVGDatabase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_active.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.cpp</name>
@@ -495,9 +530,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background_day.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_Background_day_cyberpunk.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background_day_cyberpunk.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_Background_night.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background_night.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Background_night_cyberpunk.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background_night_cyberpunk.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_Bird_.cpp</name>
@@ -513,6 +558,26 @@
 			<name>Application/User/generated/image_Pipe_bottom.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Pipe_bottom.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Pipe_bottom_cyberpunk.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Pipe_bottom_cyberpunk.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Pipe_cyberpunk.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Pipe_cyberpunk.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_background_day_2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_background_day_2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_bird_yellow.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bird_yellow.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/LanguageGb.cpp</name>

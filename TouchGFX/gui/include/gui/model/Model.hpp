@@ -11,6 +11,9 @@ public:
     void setHighScore(int score) { highScore = score; }
     int getHighScore() const { return highScore; }
 
+    void setSelectedTheme(int t) { selectedTheme = t; }
+    int getSelectedTheme() const { return selectedTheme; }
+
     void bind(ModelListener* listener)
     {
         modelListener = listener;
@@ -20,6 +23,7 @@ public:
 protected:
     ModelListener* modelListener;
     int highScore;
+    int selectedTheme;
 };
 
 #endif // MODEL_HPP

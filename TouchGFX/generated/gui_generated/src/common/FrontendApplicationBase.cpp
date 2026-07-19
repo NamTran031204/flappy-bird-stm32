@@ -13,6 +13,10 @@
 #include <gui/startscreen_screen/StartScreenPresenter.hpp>
 #include <gui/gamescreen_screen/GameScreenView.hpp>
 #include <gui/gamescreen_screen/GameScreenPresenter.hpp>
+#include <gui/gamescreen_cyberpunk_screen/GameScreen_CyberPunkView.hpp>
+#include <gui/gamescreen_cyberpunk_screen/GameScreen_CyberPunkPresenter.hpp>
+#include <gui/selectmap_screen/SelectMapView.hpp>
+#include <gui/selectmap_screen/SelectMapPresenter.hpp>
 
 using namespace touchgfx;
 

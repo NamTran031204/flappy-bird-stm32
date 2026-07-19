@@ -18,7 +18,7 @@
             "X": 79,
             "Y": 40,
             "Width": 162,
-            "Height": 20,
+            "Height": 24,
             "TextId": "__SingleUse_WNY4",
             "TextRotation": "0",
             "AutoSize": true
@@ -26,8 +26,8 @@
           {
             "Type": "TextArea",
             "Name": "HighScore",
-            "X": 109,
-            "Y": 111,
+            "X": 107,
+            "Y": 80,
             "Width": 123,
             "Height": 18,
             "TextId": "__SingleUse_VSPE",
@@ -40,12 +40,35 @@
             "Type": "ButtonWithLabel",
             "Name": "startBtn",
             "X": 40,
-            "Y": 148,
+            "Y": 112,
             "Width": 240,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
             "TextId": "__SingleUse_VBUU",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "selectBtn",
+            "X": 40,
+            "Y": 175,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "TextId": "__SingleUse_I7EJ",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -108,7 +131,7 @@
                 "Y": 187,
                 "Width": 70,
                 "Height": 150,
-                "RelativeFilename": "Pipe.png"
+                "RelativeFilename": "Pipe_cyberpunk.png"
               },
               {
                 "Type": "Image",
@@ -147,7 +170,7 @@
                 "Y": 187,
                 "Width": 70,
                 "Height": 150,
-                "RelativeFilename": "Pipe.png"
+                "RelativeFilename": "Pipe_cyberpunk.png"
               },
               {
                 "Type": "Image",
@@ -186,7 +209,7 @@
                 "Y": 190,
                 "Width": 70,
                 "Height": 150,
-                "RelativeFilename": "Pipe.png"
+                "RelativeFilename": "Pipe_cyberpunk.png"
               },
               {
                 "Type": "Image",
@@ -323,6 +346,351 @@
             }
           }
         ]
+      },
+      {
+        "Name": "GameScreen_CyberPunk",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "GameBackgroundNight",
+            "Width": 320,
+            "Height": 240,
+            "Filename": "Background_night_cyberpunk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "GameBackgroundDay",
+            "Width": 320,
+            "Height": 240,
+            "Filename": "Background_day_cyberpunk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Container",
+            "Name": "Pipe1",
+            "X": 330,
+            "Y": -35,
+            "Width": 70,
+            "Height": 340,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "BottomPipe",
+                "Y": 187,
+                "Width": 70,
+                "Height": 150,
+                "RelativeFilename": "Pipe_cyberpunk.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "TopPipe",
+                "Width": 70,
+                "Height": 110,
+                "RelativeFilename": "Pipe_bottom_cyberpunk.png"
+              },
+              {
+                "Type": "Box",
+                "Name": "ScoreZone",
+                "X": 34,
+                "Y": 110,
+                "Width": 1,
+                "Height": 80,
+                "Visible": false,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Pipe2",
+            "X": 330,
+            "Y": -35,
+            "Width": 70,
+            "Height": 340,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "BottomPipe_1",
+                "Y": 187,
+                "Width": 70,
+                "Height": 150,
+                "RelativeFilename": "Pipe_cyberpunk.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "TopPipe_1",
+                "Width": 70,
+                "Height": 110,
+                "RelativeFilename": "Pipe_bottom_cyberpunk.png"
+              },
+              {
+                "Type": "Box",
+                "Name": "ScoreZone_1",
+                "X": 34,
+                "Y": 110,
+                "Width": 1,
+                "Height": 80,
+                "Visible": false,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Pipe3",
+            "X": 330,
+            "Y": -35,
+            "Width": 70,
+            "Height": 340,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "BottomPipe_2",
+                "Y": 190,
+                "Width": 70,
+                "Height": 150,
+                "RelativeFilename": "Pipe_cyberpunk.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "TopPipe_2",
+                "Width": 70,
+                "Height": 110,
+                "RelativeFilename": "Pipe_bottom_cyberpunk.png"
+              },
+              {
+                "Type": "Box",
+                "Name": "ScoreZone_2",
+                "X": 34,
+                "Y": 110,
+                "Width": 1,
+                "Height": 80,
+                "Visible": false,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "GameOverContainer",
+            "X": 35,
+            "Width": 250,
+            "Height": 240,
+            "Components": [
+              {
+                "Type": "TextArea",
+                "Name": "HighScore",
+                "X": 72,
+                "Y": 100,
+                "Width": 124,
+                "Height": 16,
+                "TextId": "__SingleUse_82PC",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_8GWU",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "EndScore",
+                "X": 111,
+                "Y": 75,
+                "Width": 63,
+                "Height": 18,
+                "TextId": "__SingleUse_62IZ",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_YGWW",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "WideTextAction": 1
+              },
+              {
+                "Type": "TextArea",
+                "Name": "GameOver",
+                "X": 8,
+                "Y": 26,
+                "Width": 234,
+                "Height": 49,
+                "TextId": "__SingleUse_7Q7W",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "MainMenu",
+                "X": 8,
+                "Y": 152,
+                "Width": 240,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_active.png",
+                "TextId": "__SingleUse_MD46",
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_active.json"
+              }
+            ]
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "Birdo",
+            "X": 16,
+            "Y": 108,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "bird_yellow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Score",
+            "Width": 67,
+            "Height": 20,
+            "TextId": "__SingleUse_8BGU",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_RM9Z",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "WideTextAction": 1
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "changeToStartScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "MainMenu"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "StartScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "SelectMap",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "Background",
+            "Width": 320,
+            "Height": 240,
+            "Filename": "Background1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "theme1",
+            "X": 179,
+            "Y": 92,
+            "Width": 102,
+            "Height": 53,
+            "Filename": "Background_day_cyberpunk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "theme0",
+            "X": 36,
+            "Y": 92,
+            "Width": 102,
+            "Height": 56,
+            "Filename": "background_day_2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Title",
+            "X": 80,
+            "Y": 37,
+            "Width": 150,
+            "Height": 24,
+            "TextId": "__SingleUse_IFS0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "theme0_name",
+            "X": 54,
+            "Y": 148,
+            "Width": 66,
+            "Height": 24,
+            "TextId": "__SingleUse_QU22",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "theme1_name",
+            "X": 176,
+            "Y": 148,
+            "Width": 109,
+            "Height": 24,
+            "TextId": "__SingleUse_R13P",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "focusArrow",
+            "X": 75,
+            "Y": 178,
+            "Width": 24,
+            "Height": 16,
+            "TextId": "__SingleUse_T6S6",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [],

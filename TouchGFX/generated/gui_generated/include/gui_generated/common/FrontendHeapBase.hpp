@@ -16,6 +16,10 @@
 #include <gui/startscreen_screen/StartScreenPresenter.hpp>
 #include <gui/gamescreen_screen/GameScreenView.hpp>
 #include <gui/gamescreen_screen/GameScreenPresenter.hpp>
+#include <gui/gamescreen_cyberpunk_screen/GameScreen_CyberPunkView.hpp>
+#include <gui/gamescreen_cyberpunk_screen/GameScreen_CyberPunkPresenter.hpp>
+#include <gui/selectmap_screen/SelectMapView.hpp>
+#include <gui/selectmap_screen/SelectMapPresenter.hpp>
 
 
 /**
@@ -40,7 +44,9 @@ public:
      */
     typedef touchgfx::meta::TypeList< StartScreenView,
             touchgfx::meta::TypeList< GameScreenView,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< GameScreen_CyberPunkView,
+            touchgfx::meta::TypeList< SelectMapView,
+            touchgfx::meta::Nil > > >
             > GeneratedViewTypes;
 
     /**
@@ -54,7 +60,9 @@ public:
      */
     typedef touchgfx::meta::TypeList< StartScreenPresenter,
             touchgfx::meta::TypeList< GameScreenPresenter,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< GameScreen_CyberPunkPresenter,
+            touchgfx::meta::TypeList< SelectMapPresenter,
+            touchgfx::meta::Nil > > >
             > GeneratedPresenterTypes;
 
     /**

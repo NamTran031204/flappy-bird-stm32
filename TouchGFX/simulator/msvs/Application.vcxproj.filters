@@ -196,6 +196,30 @@
     <Filter Include="Source Files\generated\gui_generated\startscreen_screen">
       <UniqueIdentifier>30B98FA0-1995-6B32-6CDE-8F29BC076C1E</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\gamescreen_cyberpunk_screen">
+      <UniqueIdentifier>B0461C25-C520-2519-5F38-5C7F819A7E25</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\gamescreen_cyberpunk_screen">
+      <UniqueIdentifier>2ECCC886-2445-CF6B-967D-172667A19ED3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\gamescreen_cyberpunk_screen">
+      <UniqueIdentifier>73D4C3A8-0AF2-AF85-56CB-BD65367AF827</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\gamescreen_cyberpunk_screen">
+      <UniqueIdentifier>5A88F2D9-223F-74E1-21D1-1E6755501871</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\selectmap_screen">
+      <UniqueIdentifier>EB3FB54E-9B05-334E-4DD3-60ADC38F6C8B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\selectmap_screen">
+      <UniqueIdentifier>9C6B06AB-FD43-CE68-E407-1EC7EC9DD8E2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\selectmap_screen">
+      <UniqueIdentifier>C563EA6A-DAED-8180-F534-60E0499077EF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\selectmap_screen">
+      <UniqueIdentifier>CBCF5DA9-A81A-B79B-33BA-AEA0CDD1BF09</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -245,6 +269,24 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\startscreen_screen\StartScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\startscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\gamescreen_cyberpunk_screen\GameScreen_CyberPunkPresenter.cpp">
+      <Filter>Source Files\gui\gamescreen_cyberpunk_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\gamescreen_cyberpunk_screen\GameScreen_CyberPunkView.cpp">
+      <Filter>Source Files\gui\gamescreen_cyberpunk_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\gamescreen_cyberpunk_screen\GameScreen_CyberPunkViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\gamescreen_cyberpunk_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\selectmap_screen\SelectMapPresenter.cpp">
+      <Filter>Source Files\gui\selectmap_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\selectmap_screen\SelectMapView.cpp">
+      <Filter>Source Files\gui\selectmap_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\selectmap_screen\SelectMapViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\selectmap_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -705,6 +747,27 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startscreen_screen\StartScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\startscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\gamescreen_cyberpunk_screen\GameScreen_CyberPunkPresenter.hpp">
+      <Filter>Header Files\gui\gamescreen_cyberpunk_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\gamescreen_cyberpunk_screen\GameScreen_CyberPunkView.hpp">
+      <Filter>Header Files\gui\gamescreen_cyberpunk_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\gamescreen_cyberpunk_screen\GameScreen_CyberPunkViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\gamescreen_cyberpunk_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\MenuInput.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\selectmap_screen\SelectMapPresenter.hpp">
+      <Filter>Header Files\gui\selectmap_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\selectmap_screen\SelectMapView.hpp">
+      <Filter>Header Files\gui\selectmap_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\selectmap_screen\SelectMapViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\selectmap_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

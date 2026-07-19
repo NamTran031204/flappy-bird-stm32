@@ -29,6 +29,7 @@ public:
 
     void saveHighScore(int score);
     int getHighScore();
+    int getSelectedTheme();
 
 private:
     GameScreenPresenter();

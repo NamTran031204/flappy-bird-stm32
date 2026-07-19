@@ -6,6 +6,45 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_T6S6" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_QU22" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Classic</Translation>
+      </Text>
+      <Text Id="__SingleUse_R13P" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Cyberpunk</Translation>
+      </Text>
+      <Text Id="__SingleUse_IFS0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Chọn màn chơi</Translation>
+      </Text>
+      <Text Id="__SingleUse_I7EJ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Chọn màn</Translation>
+      </Text>
+      <Text Id="__SingleUse_RM9Z" Alignment="Left" TypographyId="ScoreFont">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_8BGU" Alignment="Left" TypographyId="ScoreFont">
+        <Translation Language="GB">Score: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MD46" Alignment="Center" TypographyId="HighScoreFont">
+        <Translation Language="GB">Main Menu</Translation>
+      </Text>
+      <Text Id="__SingleUse_7Q7W" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Game Over</Translation>
+      </Text>
+      <Text Id="__SingleUse_YGWW" Alignment="Left" TypographyId="ScoreFont">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_62IZ" Alignment="Left" TypographyId="ScoreFont">
+        <Translation Language="GB">Score: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8GWU" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_82PC" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">Highscore: &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_VBUU" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Bắt đầu</Translation>
       </Text>

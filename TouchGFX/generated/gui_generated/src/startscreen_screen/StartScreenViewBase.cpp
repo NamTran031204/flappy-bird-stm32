@@ -24,20 +24,27 @@ StartScreenViewBase::StartScreenViewBase() :
     Title.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WNY4));
     add(Title);
 
-    HighScore.setPosition(109, 111, 123, 18);
+    HighScore.setPosition(107, 80, 123, 18);
     HighScore.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     HighScore.setLinespacing(0);
     HighScore.setWildcard(touchgfx::TypedText(T___SINGLEUSE_JNYB).getText());
     HighScore.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VSPE));
     add(HighScore);
 
-    startBtn.setXY(40, 148);
+    startBtn.setXY(40, 112);
     startBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     startBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_VBUU));
     startBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     startBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     startBtn.setAction(buttonCallback);
     add(startBtn);
+
+    selectBtn.setXY(40, 175);
+    selectBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    selectBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_I7EJ));
+    selectBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    selectBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    add(selectBtn);
 }
 
 StartScreenViewBase::~StartScreenViewBase()

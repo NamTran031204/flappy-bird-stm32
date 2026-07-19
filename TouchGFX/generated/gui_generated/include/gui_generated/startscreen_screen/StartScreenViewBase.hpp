@@ -33,6 +33,7 @@ protected:
     touchgfx::TextArea Title;
     touchgfx::TextAreaWithOneWildcard HighScore;
     touchgfx::ButtonWithLabel startBtn;
+    touchgfx::ButtonWithLabel selectBtn;
 
 private:
 

@@ -27,6 +27,12 @@
     <ClCompile Include="..\..\gui\src\startscreen_screen\StartScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\startscreen_screen\StartScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\startscreen_screen\StartScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\gamescreen_cyberpunk_screen\GameScreen_CyberPunkPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\gamescreen_cyberpunk_screen\GameScreen_CyberPunkView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\gamescreen_cyberpunk_screen\GameScreen_CyberPunkViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\selectmap_screen\SelectMapPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\selectmap_screen\SelectMapView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\selectmap_screen\SelectMapViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -183,6 +189,13 @@
     <ClInclude Include="..\..\gui\include\gui\startscreen_screen\StartScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\startscreen_screen\StartScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startscreen_screen\StartScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\gamescreen_cyberpunk_screen\GameScreen_CyberPunkPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\gamescreen_cyberpunk_screen\GameScreen_CyberPunkView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\gamescreen_cyberpunk_screen\GameScreen_CyberPunkViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\MenuInput.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\selectmap_screen\SelectMapPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\selectmap_screen\SelectMapView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\selectmap_screen\SelectMapViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

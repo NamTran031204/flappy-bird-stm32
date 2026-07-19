@@ -26,3 +26,8 @@ int GameScreenPresenter::getHighScore()
 {
     return model->getHighScore();
 }
+
+int GameScreenPresenter::getSelectedTheme()
+{
+    return model->getSelectedTheme();
+}

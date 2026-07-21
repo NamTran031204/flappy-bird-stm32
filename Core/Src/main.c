@@ -93,6 +93,9 @@ uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above *
 
 /* Co nut PA0. ISR EXTI0 dat len 1, GUI doc va xoa moi tick. Van la ngat khong polling. */
 volatile uint8_t birdPressedFlag = 0;
+
+/* So tick con lai buzzer duoc bat; giam dan trong Buzzer_Task(). */
+volatile uint8_t buzzerTicks = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -653,7 +656,32 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/*
+ * Bat active buzzer trong so tick truyen vao.
+ * Khong dung HAL_Delay de tranh lam dung/giat TouchGFX.
+ */
+void Buzzer_Beep(uint8_t ticks)
+{
+  buzzerTicks = ticks;
+  HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_SET);
+}
 
+/*
+ * Goi moi frame tu TouchGFX. Khi het tick thi tat buzzer.
+ * Cach nay non-blocking, khong chan game loop.
+ */
+void Buzzer_Task(void)
+{
+  if (buzzerTicks > 0)
+  {
+    buzzerTicks--;
+
+    if (buzzerTicks == 0)
+    {
+      HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_RESET);
+    }
+  }
+}
 /*
  * Callback ngat EXTI cho nut vat ly PA0 canh len.
  * ISR chi dat co birdPressedFlag, GUI se doc va xu ly moi tick.

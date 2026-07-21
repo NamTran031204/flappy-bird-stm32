@@ -8,7 +8,7 @@
 #ifndef SIMULATOR
 extern "C"
 {
-#include "stm32f4xx_hal.h"
+#include "main.h"
 extern volatile uint8_t birdPressedFlag;
 }
 #endif
@@ -90,6 +90,11 @@ void GameScreenView::requestJump()
     }
     isGameStarted = true;
     birdVelocity = jumpForce;
+
+#ifndef SIMULATOR
+    /* Am ngan khi chim vo canh. */
+    Buzzer_Beep(3);
+#endif
 }
 
 /* Cham man la vo canh cho simulator va board co touch. Nut MainMenu van nhan qua base. */
@@ -106,6 +111,11 @@ void GameScreenView::handleClickEvent(const touchgfx::ClickEvent& evt)
 void GameScreenView::handleTickEvent()
 {
     GameScreenViewBase::handleTickEvent();
+
+#ifndef SIMULATOR
+    /* Cap nhat buzzer moi frame de tu tat coi ma khong dung delay. */
+    Buzzer_Task();
+#endif
 
 #ifndef SIMULATOR
     /* Nut vat ly PA0 dat co tu ISR EXTI0. Doc khong chan, khong polling GPIO. */
@@ -258,6 +268,11 @@ void GameScreenView::handleCollision(touchgfx::Container& pipe, int idx)
         Unicode::snprintf(ScoreBuffer, SCORE_SIZE, "%d", score);
         Score.invalidate();
 
+#ifndef SIMULATOR
+        /* Am vua khi bay qua ong va cong diem. */
+        Buzzer_Beep(5);
+#endif
+
         if (score % 12 == 0)
         {
             currentPipeSpeed += 0.5f;
@@ -282,6 +297,12 @@ bool GameScreenView::checkCollision(int x1, int y1, int w1, int h1,
 void GameScreenView::setGameOver()
 {
     isGameOver = true;
+
+
+#ifndef SIMULATOR
+    /* Am dai bao va cham/game over. */
+    Buzzer_Beep(15);
+#endif
 
     Unicode::snprintf(EndScoreBuffer, ENDSCORE_SIZE, "%d", score);
     EndScore.invalidate();

@@ -60,10 +60,12 @@ Hệ thống được phát triển trên bộ Kit STM32F429I-DISC1.
 | **Kit STM32F429I-DISC1** | Bo mạch chính, chứa vi điều khiển STM32F429ZI (ARM Cortex-M4, 180 MHz). |
 | **Màn hình LCD TFT (320x240)** | Hiển thị giao diện đồ họa TouchGFX. Sử dụng giao tiếp SPI/LTDC. |
 | **Nút nhấn User (PA0)** | Đầu vào duy nhất của người chơi, được cấu hình ngắt EXTI0 cạnh lên. |
+| **Còi Active Buzzer (PE6)** | Thiết bị đầu ra âm thanh, được điều khiển bằng GPIO để phát tín hiệu báo khi chim vỗ cánh, ghi điểm hoặc trò chơi kết thúc. |
 
 ### 2.2 Sơ đồ kết nối và Cấu hình chân (Pinout)
 *   **PA0:** Cấu hình `GPIO_EXTI0`, chế độ `Rising edge`, có điện trở kéo xuống (`Pull-down`). Nút này được sử dụng để điều hướng menu và điều khiển chim vỗ cánh.
 *   **LTDC & DMA2D:** Các ngoại vi phần cứng được cấu hình qua STM32CubeMX để hỗ trợ render đồ họa xuất ra màn hình.
+*   **PE6:** Cấu hình `GPIO_Output`, mức mặc định ban đầu là `Low`. Chân này dùng để điều khiển còi Active Buzzer. Khi có sự kiện âm thanh, chương trình đưa chân PE6 lên mức `High` để bật còi, sau đó tự động kéo về `Low` để tắt còi.
 
 ---
 
@@ -146,6 +148,19 @@ Khi phát hiện va chạm với ống hoặc chạm mặt đất, chương trì
 
 Đặc biệt, nếu trò chơi kết thúc do chim va chạm với ống nước (chưa chạm đất), một đoạn mã vật lý nhỏ trong nhánh `GAME_OVER` của `handleTickEvent()` vẫn tiếp tục hoạt động. Đoạn mã này mô phỏng lực rơi tự do, kéo con chim rơi thẳng xuống mặt đất rồi mới dừng lại hoàn toàn, tạo ra hiệu ứng kết thúc trò chơi tự nhiên và trực quan.
 
+#### 3.3.8 Tích hợp âm thanh bằng Active Buzzer
+
+Để tăng tính phản hồi cho người chơi, hệ thống được bổ sung một còi Active Buzzer kết nối với chân PE6 của vi điều khiển. Do đây là loại buzzer chủ động, chương trình không cần tạo tín hiệu PWM phức tạp mà chỉ cần điều khiển mức logic của chân GPIO: mức `High` để bật còi và mức `Low` để tắt còi.
+
+Âm thanh được phát tại ba sự kiện chính trong trò chơi:
+*   Khi người chơi nhấn nút làm chim vỗ cánh, hệ thống phát một tiếng beep ngắn.
+*   Khi chim bay qua ống và được cộng điểm, hệ thống phát một tiếng beep có thời lượng trung bình.
+*   Khi xảy ra va chạm hoặc trò chơi kết thúc, hệ thống phát một tiếng beep dài hơn để báo hiệu Game Over.
+
+Để tránh làm gián đoạn luồng đồ họa của TouchGFX, chương trình không sử dụng `HAL_Delay()` để tạo thời lượng âm thanh. Thay vào đó, hệ thống dùng biến đếm `buzzerTicks`. Hàm `Buzzer_Beep(ticks)` bật buzzer và gán số tick cần phát âm, còn hàm `Buzzer_Task()` được gọi định kỳ trong `handleTickEvent()` để giảm dần bộ đếm và tự động tắt buzzer khi hết thời gian.
+
+Cách thiết kế này giúp việc phát âm thanh không gây blocking, không làm giảm tốc độ khung hình, đồng thời vẫn đảm bảo các sự kiện trong game có phản hồi tức thời. Ngoài ra, chương trình cũng bổ sung cơ chế tắt buzzer khi rời khỏi màn hình chơi để tránh trường hợp còi vẫn tiếp tục kêu nếu người chơi chuyển màn hình khi âm thanh Game Over chưa kết thúc.
+
 ![Giao diện Game Over](./img/Game_Over.png)
 
 ## 4. KẾT QUẢ ĐẠT ĐƯỢC
@@ -167,7 +182,7 @@ Sau quá trình thực hiện, dự án đã xây dựng thành công trò chơi
 *   Kiểm tra va chạm chính xác bằng thuật toán AABB và tính điểm trong thời gian thực.
 *   Lưu trữ và hiển thị điểm kỷ lục (High Score) qua các màn chơi.
 *   Tự động tăng độ khó theo điểm số và chuyển đổi giao diện giữa chế độ Ngày/Đêm hoặc Classic/Cyberpunk.
-*   **Phát âm thanh bằng còi Buzzer** mỗi khi có sự kiện phát sinh như chim vỗ cánh, ghi điểm hoặc khi trò chơi kết thúc.
+*   **Tích hợp phản hồi âm thanh bằng Active Buzzer**, phát các tín hiệu beep khác nhau khi chim vỗ cánh, ghi điểm và khi trò chơi kết thúc.
 *   Ứng dụng hiệu quả FreeRTOS để quản lý luồng đồ họa và xử lý tín hiệu đầu vào một cách độc lập.
 
 ### 5.2 Ưu điểm

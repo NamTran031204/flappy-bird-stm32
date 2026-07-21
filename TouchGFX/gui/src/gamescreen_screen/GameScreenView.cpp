@@ -369,7 +369,14 @@ void GameScreenView::applyTheme(int theme)
 
     GameBackgroundDay.setBitmap(touchgfx::Bitmap(bgDay));
     GameBackgroundNight.setBitmap(touchgfx::Bitmap(bgNight));
+
+    /* Ep lai chim kich thuoc nho */
+    const int oldCenterX = Birdo.getX() + Birdo.getWidth() / 2;
+    const int BIRD_SIZE = 12;
     Birdo.setBitmap(touchgfx::Bitmap(bird));
+    Birdo.setWidthHeight(BIRD_SIZE, BIRD_SIZE);
+    /* tinh lai x moi sao cho tam ngang cua chim khong doi*/ 
+    Birdo.setX(oldCenterX - BIRD_SIZE / 2);
 
     BottomPipe.setBitmap(touchgfx::Bitmap(pipeBottom));
     BottomPipe_1.setBitmap(touchgfx::Bitmap(pipeBottom));

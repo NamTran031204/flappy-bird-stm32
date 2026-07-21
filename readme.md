@@ -42,11 +42,11 @@ Bên cạnh đó, đề tài cũng đi sâu vào việc giải quyết các bài
 
 | STT | Họ và tên | Nhiệm vụ đảm nhiệm |
 | :---: | :--- | :--- |
-| 1 | Nguyễn Duy Quang | Xây dựng logic trò chơi, xử lý va chạm và tính điểm. |
-| 2 | [Tên thành viên 2] | Thiết kế cấu trúc giao diện trên TouchGFX Designer, xử lý hình ảnh, tối ưu hóa tài nguyên và tích hợp các màn hình. |
-| 3 | [Tên thành viên 3] | Xây dựng hệ thống FreeRTOS, xử lý ngắt và lưu điểm cao nhất. |
-| 4 | [Tên thành viên 4] | Tìm hiểu và lên ý tưởng game. |
-| 5 | [Tên thành viên 5] | Biên soạn tài liệu báo cáo. |
+| 1 | Trần Phương Nam | Xây dựng logic game, xử lý va chạm và tính điểm, cấu hình ngắt và xử lý high score. |
+| 2 | Nguyễn Bùi Hoàng | Thiết kế và lắp mạch cho còi Buzzer, xử lý logic cho còi  |
+| 3 | Nguyễn Duy Quang | Viết báo cáo, xử lý chuyển màn  |
+| 4 | Ma Đức Hưng | Tìm hiểu và lên ý tưởng game, thiết kế giao diện. |
+| 5 | Nguyễn Đức Anh | Tìm và vẽ các thành phần giao diện |
 
 ---
 
@@ -150,7 +150,7 @@ Khi phát hiện va chạm với ống hoặc chạm mặt đất, chương trì
 
 #### 3.3.8 Tích hợp âm thanh bằng Active Buzzer
 
-Để tăng tính phản hồi cho người chơi, hệ thống được bổ sung một còi Active Buzzer kết nối với chân PE6 của vi điều khiển. Do đây là loại buzzer chủ động, chương trình không cần tạo tín hiệu PWM phức tạp mà chỉ cần điều khiển mức logic của chân GPIO: mức `High` để bật còi và mức `Low` để tắt còi.
+Để tăng tính phản hồi cho người chơi, hệ thống được bổ sung một còi Active Buzzer kết nối với **chân PE6** của vi điều khiển. Do đây là loại buzzer chủ động, chương trình không cần tạo tín hiệu PWM phức tạp mà chỉ cần điều khiển mức logic của chân GPIO: mức `High` để bật còi và mức `Low` để tắt còi.
 
 Âm thanh được phát tại ba sự kiện chính trong trò chơi:
 *   Khi người chơi nhấn nút làm chim vỗ cánh, hệ thống phát một tiếng beep ngắn.
@@ -165,9 +165,15 @@ Cách thiết kế này giúp việc phát âm thanh không gây blocking, khôn
 
 ## 4. KẾT QUẢ ĐẠT ĐƯỢC
 
-![Start Screen ](./img/Start_Screen2.png)
+![Start Screen ](./img/Start_Screen.png)
+
+![Select Map Screen](./img/Select_Map_Screen.png)
+
+![Game Screen ](./img/Game_Screen.png)
 
 ![Game Screen ](./img/Game_Screen2.png)
+
+![Game Over ](./img/Game_Over.png)
 
 ![Game Over ](./img/Game_Over2.png)
 
@@ -195,7 +201,7 @@ Sau quá trình thực hiện, dự án đã xây dựng thành công trò chơi
 ### 5.3 Nhược điểm
 Bên cạnh những kết quả đạt được, đề tài vẫn còn một số hạn chế cần khắc phục:
 *   **Lưu trữ tạm thời:** Điểm cao nhất (High Score) hiện tại mới chỉ được lưu trên RAM (thông qua đối tượng `Model`), do đó dữ liệu này sẽ bị mất khi tắt nguồn hoặc khởi động lại vi điều khiển.
-*   **Trải nghiệm âm thanh hạn chế:** Việc sử dụng còi Buzzer tuy đáp ứng được yêu cầu báo hiệu sự kiện nhưng tín hiệu phát ra còn đơn điệu, chưa thể tái tạo được các hiệu ứng âm thanh phong phú như nhạc nền hay tiếng vỗ cánh thực tế.
+*   **Chưa sử dụng được màn hình LCD để cảm ứng:** Do phát triển vẫn còn nhiều thiếu sót về kĩ năng dẫn đến không cấu hình được màn hình cảm ứng để chơi game. Lỗi thường gặp: màn hình trắng hoặc hiển thị rác, sọc,...
 *   **Chế độ chơi cơ bản:** Trò chơi hiện tại chỉ có một lối chơi duy nhất, chưa tích hợp các tính năng nâng cao như tạm dừng (Pause), bảng xếp hạng nhiều người chơi, hay tùy chỉnh mức độ khó trực tiếp từ Menu.
 
 ### 5.4 Bài học rút ra

@@ -57,6 +57,7 @@ void Error_Handler(void);
 /* Buzzer API: TouchGFX goi Beep(), moi frame goi Task() de tu tat coi. */
 void Buzzer_Beep(uint8_t ticks);
 void Buzzer_Task(void);
+void Buzzer_Stop(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

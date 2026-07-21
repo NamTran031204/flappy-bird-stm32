@@ -26,6 +26,11 @@ void GameScreenView::setupScreen()
 
 void GameScreenView::tearDownScreen()
 {
+#ifndef SIMULATOR
+	/* Roi man game thi tat buzzer, tranh truong hop beep chua het tick. */
+	Buzzer_Stop();
+#endif
+
     GameScreenViewBase::tearDownScreen();
 }
 
@@ -124,6 +129,10 @@ void GameScreenView::handleTickEvent()
         birdPressedFlag = 0;
         if (isGameOver)
         {
+#ifndef SIMULATOR
+        	/* Tat buzzer truoc khi chuyen man, vi GameScreen se ngung goi Buzzer_Task(). */
+        	Buzzer_Stop();
+#endif
             application().gotoStartScreenScreenNoTransition();
             return;
         }

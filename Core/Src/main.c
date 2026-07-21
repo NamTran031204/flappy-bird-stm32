@@ -666,6 +666,12 @@ void Buzzer_Beep(uint8_t ticks)
   HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_SET);
 }
 
+void Buzzer_Stop(void)
+{
+	buzzerTicks = 0;
+	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_RESET);
+}
+
 /*
  * Goi moi frame tu TouchGFX. Khi het tick thi tat buzzer.
  * Cach nay non-blocking, khong chan game loop.

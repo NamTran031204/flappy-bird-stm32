@@ -54,7 +54,10 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+/* Buzzer API: TouchGFX goi Beep(), moi frame goi Task() de tu tat coi. */
+void Buzzer_Beep(uint8_t ticks);
+void Buzzer_Task(void);
+void Buzzer_Stop(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
@@ -66,6 +69,8 @@ void Error_Handler(void);
 #define FRAME_RATE_GPIO_Port GPIOE
 #define MCU_ACTIVE_Pin GPIO_PIN_5
 #define MCU_ACTIVE_GPIO_Port GPIOE
+#define BUZZER_Pin GPIO_PIN_6
+#define BUZZER_GPIO_Port GPIOE
 #define SPI5_NCS_Pin GPIO_PIN_1
 #define SPI5_NCS_GPIO_Port GPIOC
 

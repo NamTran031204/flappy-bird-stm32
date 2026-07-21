@@ -93,6 +93,9 @@ uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above *
 
 /* Co nut PA0. ISR EXTI0 dat len 1, GUI doc va xoa moi tick. Van la ngat khong polling. */
 volatile uint8_t birdPressedFlag = 0;
+
+/* So tick con lai buzzer duoc bat; giam dan trong Buzzer_Task(). */
+volatile uint8_t buzzerTicks = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -591,7 +594,8 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, VSYNC_FREQ_Pin|RENDER_TIME_Pin|FRAME_RATE_Pin|MCU_ACTIVE_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, VSYNC_FREQ_Pin|RENDER_TIME_Pin|FRAME_RATE_Pin|MCU_ACTIVE_Pin
+                          |BUZZER_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(SPI5_NCS_GPIO_Port, SPI5_NCS_Pin, GPIO_PIN_SET);
@@ -608,6 +612,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : BUZZER_Pin */
+  GPIO_InitStruct.Pin = BUZZER_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(BUZZER_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : SPI5_NCS_Pin */
   GPIO_InitStruct.Pin = SPI5_NCS_Pin;
@@ -645,7 +656,38 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/*
+ * Bat active buzzer trong so tick truyen vao.
+ * Khong dung HAL_Delay de tranh lam dung/giat TouchGFX.
+ */
+void Buzzer_Beep(uint8_t ticks)
+{
+  buzzerTicks = ticks;
+  HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_SET);
+}
 
+void Buzzer_Stop(void)
+{
+	buzzerTicks = 0;
+	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_RESET);
+}
+
+/*
+ * Goi moi frame tu TouchGFX. Khi het tick thi tat buzzer.
+ * Cach nay non-blocking, khong chan game loop.
+ */
+void Buzzer_Task(void)
+{
+  if (buzzerTicks > 0)
+  {
+    buzzerTicks--;
+
+    if (buzzerTicks == 0)
+    {
+      HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_RESET);
+    }
+  }
+}
 /*
  * Callback ngat EXTI cho nut vat ly PA0 canh len.
  * ISR chi dat co birdPressedFlag, GUI se doc va xu ly moi tick.
